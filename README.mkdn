@@ -1,10 +1,10 @@
 # NAME
 
-Puppet::Orchestrator - Connects to the Puppet Orchestrator API (PE Console groups)
+Puppet::Orchestrator - Connects to the Puppet Orchestrator API (i.e. Puppet Tasks)
 
 # VERSION
 
-version 0.001
+version 0.002
 
 # SYNOPSIS
 
