@@ -2,7 +2,7 @@
 # Website: www.q-technologies.com.au
 # Date: 6th October 2016
 
-# ABSTRACT: Connects to the Puppet Orchestrator API (PE Console groups)
+# ABSTRACT: Connects to the Puppet Orchestrator API (i.e. Puppet Tasks)
 
 
 =head1 SYNOPSIS
