@@ -228,7 +228,7 @@ The puppet DB object used to interact with the Puppet DB.
 has 'puppet_db' => (
     is => 'rw', 
     isa => 'Puppet::DB',
-    required => 1,
+    required => 0,
     predicate => 'has_puppet_db',
 );
 
@@ -355,8 +355,8 @@ sub submit_task {
     my $path = "command/task";
     my $data;
     $data = $self->push_data( $path, $task_data );
-    $self->jobid( $data->{job}{name} );
-    return $self->jobid;
+    #$self->jobid( $data->{job}{name} );
+    return $data->{job}{name};
 }
 
 
@@ -435,6 +435,21 @@ sub print_output_wait {
         #say "Checking if we are finished";
         $keep_running = ! $self->is_job_finished( $jobid );
     }
+}
+
+=head2 get_job_results
+
+This will provide a data structure of the job status.
+
+    $orchestrator->get_job_results;
+
+=cut
+
+sub get_job_results {
+    my $self = shift;
+    my $jobid = shift;
+
+    return $self->get_data( "jobs/$jobid/events" );
 }
 
 
